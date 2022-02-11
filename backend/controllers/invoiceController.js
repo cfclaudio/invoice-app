@@ -9,7 +9,14 @@ const getInvoices = (req, res) => {
     @route   POST /api/invoices
     @access  Private    */
 const createInvoice = (req, res) => {
-  res.status(201).json({ message: "Create invoices" });
+  if (!req.body.name) {
+    res.status(400);
+    throw new Error("Name field is missing");
+  }
+
+  res
+    .status(201)
+    .json({ message: "Create invoices", test: "asdasd", name: req.body.name });
 };
 
 /*  @desc    Update invoice
