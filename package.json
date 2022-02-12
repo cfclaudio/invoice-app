@@ -1,19 +1,24 @@
 {
   "name": "mern-project",
   "version": "1.0.0",
-  "main": "server.js",
+  "description": "Invoice App API",
+  "author": "cfclaudio",
+  "main": "backend/server.js",
   "private": true,
   "workspaces": [
     "backend",
     "client"
   ],
+  "engines": {
+    "node": "^16"
+  },
   "scripts": {
     "start": "node backend/server.js",
     "server": "nodemon backend/server.js",
     "client:dev": "yarn workspace client dev",
     "client:start": "yarn workspace client start",
-    "client:add": "yarn workspace client add" ,
-    "client:remove": "yarn workspace client remove" 
+    "client:add": "yarn workspace client add",
+    "client:remove": "yarn workspace client remove"
   },
   "dependencies": {
     "colors": "^1.4.0",
