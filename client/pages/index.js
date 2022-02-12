@@ -1,17 +1,19 @@
 import Head from "next/head";
-import { TypographyBlock } from "../components";
+import { TypographyBlock, Nav } from "../components";
+import { Box } from "@chakra-ui/react";
 
 export default function Home() {
   return (
-    <div>
+    <Box sx={{ display: "flex", flexDir: "column" }}>
       <Head>
         <title>Invoice App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
+      <Nav />
+      <Box as="main">
         <TypographyBlock />
-      </main>
-    </div>
+      </Box>
+    </Box>
   );
 }

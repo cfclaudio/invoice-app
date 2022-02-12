@@ -6,6 +6,7 @@ import {
   lineHeights,
   Heading,
 } from "./typography";
+import { colors } from "./colors";
 
 console.log("chakraTheme", chakraTheme);
 
@@ -14,6 +15,7 @@ const theme = extendTheme({
   fontWeights,
   lineHeights,
   textStyles,
+  colors,
   components: {
     Heading,
   },
