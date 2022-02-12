@@ -2,6 +2,11 @@
   "name": "mern-project",
   "version": "1.0.0",
   "main": "server.js",
+  "private": true,
+  "workspaces": [
+    "backend",
+    "client"
+  ],
   "scripts": {
     "start": "node backend/server.js",
     "server": "nodemon backend/server.js"
