@@ -17,6 +17,10 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use("/api/invoices", require("./routes/invoiceRoutes"));
 
+app.get("/", (req, res) => {
+  res.send("Welcome to cfclaudio Invoices API");
+});
+
 // Overwrites default express error handler
 app.use(errorHandler);
 
