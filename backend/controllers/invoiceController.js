@@ -15,13 +15,30 @@ const getInvoices = asyncHandler(async (req, res) => {
 //  @route   POST /api/invoices
 //  @access  Private
 const createInvoice = asyncHandler(async (req, res) => {
-  if (!req.body.name) {
-    res.status(400);
-    throw new Error("Name field is missing");
-  }
+  //   if (!req.body.name) {
+  //     res.status(400);
+  //     throw new Error("Name field is missing");
+  //   }
 
   const invoice = await Invoice.create({
-    name: req.body.name,
+    billFrom: {
+      streetAddress: req.body.billFrom.streetAddress,
+      postalCode: req.body.billFrom.postalCode,
+      city: req.body.billFrom.city,
+      country: req.body.billFrom.country,
+    },
+    client: {
+      name: req.body.client.name,
+      email: req.body.client.email,
+      streetAddress: req.body.client.streetAddress,
+      postalCode: req.body.client.postalCode,
+      city: req.body.client.city,
+      country: req.body.client.country,
+    },
+    invoiceDate: req.body.invoiceDate,
+    dueDate: req.body.dueDate,
+    description: req.body.description,
+    items: req.body.items,
   });
 
   res.status(201).json(invoice);
